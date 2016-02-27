@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="custom_brown">#A19783</color>
+    <color name="custom_brown_darker">#908775</color>
+    <color name="custom_white">#EBF4FC</color>
+    <color name="custom_blue">#272561</color>
+    <color name="custom_gray">#BBBAC1</color>
+    <color name="light_brown">#DBD5CA</color>
+    <color name="section">#D8E3EC</color>
+    <color name="navd_brown">#F6F4F0</color>
+    <color name="navd_black">#140B3E</color>
+    <color name="navd_select_brown">#96928B</color>
+    <color name="layout_brown">#DFDAD2</color>
+</resources>

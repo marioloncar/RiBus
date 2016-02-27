@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/custom_white">
+
+    <PreferenceCategory android:layout="@layout/push_title" />
+    <SwitchPreference
+        android:key="pushOnOff"
+        android:textOn="@color/custom_brown"
+        android:title="Enable push notifications" />
+    <PreferenceCategory android:layout="@layout/about_title" />
+    <Preference
+        android:key="version"
+        android:summary="1.1"
+        android:title="App version" />
+    <Preference
+        android:key="date"
+        android:summary="retrieving..."
+        android:title="Database date" />
+
+    <Preference
+        android:key="hint"
+        android:summary="If you find that timetables are inaccurate, please contact us at: support@ribusapp.com" />
+
+</PreferenceScreen>

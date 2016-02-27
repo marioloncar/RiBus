@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">RiBus</string>
+
+    <string-array name="titles">
+        <item>1</item>
+        <item>1A</item>
+        <item>1B</item>
+        <item>2</item>
+        <item>2A</item>
+        <item>3</item>
+        <item>3A</item>
+        <item>4</item>
+        <item>4A</item>
+        <item>5</item>
+        <item>5A</item>
+        <item>5B</item>
+        <item>6</item>
+        <item>7</item>
+        <item>7A</item>
+        <item>8</item>
+        <item>8A</item>
+        <item>9</item>
+        <item>13</item>
+        <item>KBC</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Pećine Plumbum - Bivio</item>
+        <item>A. K. Miošića - Marčeljeva Draga</item>
+        <item>Tower - Strmica</item>
+        <item>Trsat - Srdoči</item>
+        <item>A. K. Miošića - Ivana Zavidića</item>
+        <item>A. K. Miošića - Grbci</item>
+        <item>Jelačićev Trg - Bezjaki</item>
+        <item>Fiumara - Brašćine</item>
+        <item>Brašćine - Pulac</item>
+        <item>Jelačićev Trg - Drenova</item>
+        <item>Drežnička - Tibljaši</item>
+        <item>Drenova - Petrci</item>
+        <item>Podvežica - Novo Naselje</item>
+        <item>Gornja Vežica - Pehlin</item>
+        <item>Sveti Križ - Hosti</item>
+        <item>(Trsat) Kampus - Torpedo</item>
+        <item>Jelačićev Trg - Kampus</item>
+        <item>Delta - Baraći</item>
+        <item>Delta - Grohovo</item>
+        <item>KBC Sušak - KBC Rijeka</item>
+    </string-array>
+
+    <string-array name="tabs">
+        <item>Workday</item>
+        <item>Saturday</item>
+        <item>Sunday &amp; Holidays</item>
+    </string-array>
+
+    <string name="title_activity_stations">Stations</string>
+    <string name="title_activity_navigation_drawer">Lines</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="parse_app_id">nQ0cWqzhn2J7J05dxs7OwkHEZqEIHr7am3WGbqGW</string>
+    <string name="parse_client_key">sqcEWs2ZZ08mK7ADJHBDzKAmSN904JOS43d7uFVe</string>
+    <string name="title_activity_settings">Info</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+</resources>

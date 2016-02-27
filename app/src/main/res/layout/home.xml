@@ -1,0 +1,58 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Home"
+        android:background="@mipmap/ribus_bg"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="229dp"
+    android:layout_weight="50">
+     <ImageButton
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/ibTimetable"
+         android:background="@mipmap/timetable"
+         android:layout_centerVertical="true"
+         android:layout_centerHorizontal="true" />
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Timetable &amp; Arrivals"
+         android:id="@+id/tvTimetable"
+         android:layout_below="@+id/ibTimetable"
+         android:layout_centerHorizontal="true"
+         android:textColor="@color/custom_blue"
+         android:textSize="20sp"/>
+</RelativeLayout>
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="250dp"
+         android:layout_gravity="center"
+         android:layout_weight="50">
+     <ImageButton
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/ibStations"
+         android:background="@mipmap/maps"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true" />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Stations"
+         android:id="@+id/tvStations"
+         android:textColor="@color/custom_blue"
+         android:textSize="20sp"
+         android:layout_below="@+id/ibStations"
+         android:layout_centerHorizontal="true" />
+     </RelativeLayout>
+ </LinearLayout>
+
+
