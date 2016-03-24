@@ -20,6 +20,7 @@ import com.jamaco.ribus.R;
 import com.jamaco.ribus.database.DatabaseAdapter;
 import com.jamaco.ribus.dynamic_listview_adapter.Section;
 import com.jamaco.ribus.dynamic_listview_adapter.SectionAdapter;
+
 import info.hoang8f.android.segmented.SegmentedGroup;
 
 /**
@@ -113,7 +114,7 @@ public class FragmentWorkday extends Fragment {
             } catch (SQLException e) {
                 Log.e("Error", "Cannot display data");
             }
-        }else{
+        } else {
             noBus.setText("This bus does not drive on selected day");
         }
     }
@@ -150,7 +151,7 @@ public class FragmentWorkday extends Fragment {
             } catch (SQLException e) {
                 Log.e("Error", "Cannot display data");
             }
-        }else{
+        } else {
             noBus.setText("This bus does not drive on selected day");
         }
     }

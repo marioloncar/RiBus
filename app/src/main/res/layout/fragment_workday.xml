@@ -1,91 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/custom_white"
     tools:context=".FragmentWorkday">
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:text="Line number"
         android:id="@+id/tvLine"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/custom_blue"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true" />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Choose starting point: "
-        android:id="@+id/tvHint"
-        android:textColor="@color/custom_blue"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Line number"
+        android:textColor="@color/custom_blue"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tvLine"
-        android:layout_centerHorizontal="true" />
-    <info.hoang8f.android.segmented.SegmentedGroup
-        xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="Choose starting point: "
+        android:textColor="@color/custom_blue"
+        android:textSize="18sp" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
         android:id="@+id/segmented"
         android:layout_width="match_parent"
-        android:paddingLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:paddingRight="16dp"
         android:layout_height="28dp"
+        android:layout_below="@+id/tvHint"
+        android:layout_marginTop="8dp"
+        android:checkedButton="@+id/button1"
         android:orientation="horizontal"
-        segmentedgroup:sc_border_width="2dp"
-        segmentedgroup:sc_corner_radius="5dp"
-        android:layout_below="@+id/tvHint"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:weightSum="100"
-        android:checkedButton="@+id/button1">
-    <RadioButton
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/RadioButton"
-        android:layout_weight="50"
-        android:layout_below="@+id/tvHint"
-        android:layout_alignEnd="@+id/tvHint" />
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="5dp">
 
-    <RadioButton
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/RadioButton"
-        android:layout_weight="50"
-        android:layout_alignTop="@+id/segmented"
-        android:layout_alignStart="@+id/tvHint" />
+        <RadioButton
+            android:id="@+id/button1"
+            style="@style/RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tvHint"
+            android:layout_below="@+id/tvHint"
+            android:layout_weight="50" />
+
+        <RadioButton
+            android:id="@+id/button2"
+            style="@style/RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tvHint"
+            android:layout_alignTop="@+id/segmented"
+            android:layout_weight="50" />
     </info.hoang8f.android.segmented.SegmentedGroup>
 
     <TextView
+        android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:textColor="@color/custom_blue"
-        android:id="@+id/tvMessage"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/custom_blue"
+        android:textSize="12sp" />
+
     <ListView
+        android:id="@+id/lvTimetable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvTimetable"
+        android:layout_above="@+id/tvMessage"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/segmented"
         android:layout_marginTop="37dp"
         android:background="@color/custom_white"
-        android:layout_alignParentEnd="true"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/tvMessage" />
+        android:dividerHeight="0dp" />
+
     <TextView
+        android:id="@+id/tvNoBus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvNoBus"
-        android:textSize="18sp"
-        android:textColor="@color/custom_blue"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/custom_blue"
+        android:textSize="18sp" />
 </RelativeLayout>

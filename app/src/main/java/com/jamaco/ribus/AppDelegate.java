@@ -15,6 +15,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import io.fabric.sdk.android.Fabric;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -32,7 +33,7 @@ public class AppDelegate extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-       // Fabric.with(this, new Crashlytics(), new Answers());
+        // Fabric.with(this, new Crashlytics(), new Answers());
         Parse.initialize(this, getString(R.string.parse_app_id), getString(R.string.parse_client_key));
 /*
         ParseAnonymousUtils.logIn(new LogInCallback() {

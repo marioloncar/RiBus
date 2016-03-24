@@ -129,14 +129,9 @@ public class Lines extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }
@@ -204,7 +199,7 @@ class MyAdapter extends BaseAdapter {
 
             convertView.setTag(holder);
         } else {
-            //view je vec recikliran
+            //view is already recycled
             holder = (ViewHolder) convertView.getTag();
         }
 

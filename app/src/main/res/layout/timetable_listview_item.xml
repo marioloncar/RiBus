@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/tvTimetableItem"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/custom_blue"
-        android:background="@color/custom_white"/>
+    android:id="@+id/tvTimetableItem"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/custom_white"
+    android:gravity="center"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:textColor="@color/custom_blue"
+    android:textSize="20sp" />

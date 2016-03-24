@@ -13,44 +13,44 @@ import android.widget.Toast;
 public class DatabaseAdapter {
 
     DatabaseHelper helper;
-    public DatabaseAdapter(Context context)
-    {
+
+    public DatabaseAdapter(Context context) {
         helper = new DatabaseHelper(context);
     }
 
 
-    public void insertData(String name, String work1, String work1notice, String work2, String workd2notice, String sat1, String sat1notice, String sat2, String sat2notice, String sun1, String sun1notice, String sun2, String sun2notice){
+    public void insertData(String name, String work1, String work1notice, String work2, String workd2notice, String sat1, String sat1notice, String sat2, String sat2notice, String sun1, String sun1notice, String sun2, String sun2notice) {
 
         SQLiteDatabase db = helper.getWritableDatabase();
 
-        String sqlQuery = "INSERT INTO "+DatabaseHelper.TABLE_NAME+" ("+DatabaseHelper.BUSNAME+","+DatabaseHelper.WORKDAY1+","+DatabaseHelper.WD1NOTICE+","+DatabaseHelper.WORKDAY2+","+DatabaseHelper.WD2NOTICE+","+DatabaseHelper.SATURDAY1+","+DatabaseHelper.SAT1NOTICE+","+DatabaseHelper.SATURDAY2+","+DatabaseHelper.SAT2NOTICE+","+DatabaseHelper.SUNDAY1+","+DatabaseHelper.SUN1NOTICE+","+DatabaseHelper.SUNDAY2+","+DatabaseHelper.SUN2NOTICE+") VALUES (\""+name+"\",\""+work1+"\",\""+work1notice+"\",\""+work2+"\",\""+workd2notice+"\",\""+sat1+"\",\""+sat1notice+"\",\""+sat2+"\",\""+sat2notice+"\",\""+sun1+"\",\""+sun1notice+"\",\""+sun2+"\",\""+sun2notice+"\");";
+        String sqlQuery = "INSERT INTO " + DatabaseHelper.TABLE_NAME + " (" + DatabaseHelper.BUSNAME + "," + DatabaseHelper.WORKDAY1 + "," + DatabaseHelper.WD1NOTICE + "," + DatabaseHelper.WORKDAY2 + "," + DatabaseHelper.WD2NOTICE + "," + DatabaseHelper.SATURDAY1 + "," + DatabaseHelper.SAT1NOTICE + "," + DatabaseHelper.SATURDAY2 + "," + DatabaseHelper.SAT2NOTICE + "," + DatabaseHelper.SUNDAY1 + "," + DatabaseHelper.SUN1NOTICE + "," + DatabaseHelper.SUNDAY2 + "," + DatabaseHelper.SUN2NOTICE + ") VALUES (\"" + name + "\",\"" + work1 + "\",\"" + work1notice + "\",\"" + work2 + "\",\"" + workd2notice + "\",\"" + sat1 + "\",\"" + sat1notice + "\",\"" + sat2 + "\",\"" + sat2notice + "\",\"" + sun1 + "\",\"" + sun1notice + "\",\"" + sun2 + "\",\"" + sun2notice + "\");";
 
         db.execSQL(sqlQuery);
         db.close();
     }
 
-    public void updateData(String name, String work1, String work1notice, String work2, String workd2notice, String sat1, String sat1notice, String sat2, String sat2notice, String sun1, String sun1notice, String sun2, String sun2notice){
+    public void updateData(String name, String work1, String work1notice, String work2, String workd2notice, String sat1, String sat1notice, String sat2, String sat2notice, String sun1, String sun1notice, String sun2, String sun2notice) {
 
         SQLiteDatabase db = helper.getWritableDatabase();
 
-        String sqlQuery = "UPDATE "+DatabaseHelper.TABLE_NAME+" SET "+DatabaseHelper.WORKDAY1+"=\""+work1+"\","+DatabaseHelper.WD1NOTICE+"=\""+work1notice+"\","+DatabaseHelper.WORKDAY2+"=\""+work2+"\","+DatabaseHelper.WD2NOTICE+"=\""+workd2notice+"\","+DatabaseHelper.SATURDAY1+"=\""+sat1+"\","+DatabaseHelper.SAT1NOTICE+"=\""+sat1notice+"\","+DatabaseHelper.SATURDAY2+"=\""+sat2+"\","+DatabaseHelper.SAT2NOTICE+"=\""+sat2notice+"\","+DatabaseHelper.SUNDAY1+"=\""+sun1+"\","+DatabaseHelper.SUN1NOTICE+"=\""+sun1notice+"\","+DatabaseHelper.SUNDAY2+"=\""+sun2+"\"" +
-                ","+DatabaseHelper.SUN2NOTICE+"=\""+sun2notice+"\" WHERE " + DatabaseHelper.BUSNAME +"=\""+name+"\";";
+        String sqlQuery = "UPDATE " + DatabaseHelper.TABLE_NAME + " SET " + DatabaseHelper.WORKDAY1 + "=\"" + work1 + "\"," + DatabaseHelper.WD1NOTICE + "=\"" + work1notice + "\"," + DatabaseHelper.WORKDAY2 + "=\"" + work2 + "\"," + DatabaseHelper.WD2NOTICE + "=\"" + workd2notice + "\"," + DatabaseHelper.SATURDAY1 + "=\"" + sat1 + "\"," + DatabaseHelper.SAT1NOTICE + "=\"" + sat1notice + "\"," + DatabaseHelper.SATURDAY2 + "=\"" + sat2 + "\"," + DatabaseHelper.SAT2NOTICE + "=\"" + sat2notice + "\"," + DatabaseHelper.SUNDAY1 + "=\"" + sun1 + "\"," + DatabaseHelper.SUN1NOTICE + "=\"" + sun1notice + "\"," + DatabaseHelper.SUNDAY2 + "=\"" + sun2 + "\"" +
+                "," + DatabaseHelper.SUN2NOTICE + "=\"" + sun2notice + "\" WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
         db.execSQL(sqlQuery);
         db.close();
     }
 
-    public String[] getWorkday1(String name){
+    public String[] getWorkday1(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.WORKDAY1+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.WORKDAY1 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -65,16 +65,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getWorkday1Notice(String name){
+    public String getWorkday1Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.WD1NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.WD1NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -88,16 +88,16 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public String[] getWorkday2(String name){
+    public String[] getWorkday2(String name) {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.WORKDAY2+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.WORKDAY2 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -112,16 +112,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getWorkday2Notice(String name){
+    public String getWorkday2Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.WD2NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.WD2NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -135,16 +135,16 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public String[] getSaturday1(String name){
+    public String[] getSaturday1(String name) {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SATURDAY1+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SATURDAY1 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -159,16 +159,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getSaturday1Notice(String name){
+    public String getSaturday1Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SAT1NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SAT1NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -182,16 +182,16 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public String[] getSaturday2(String name){
+    public String[] getSaturday2(String name) {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SATURDAY2+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SATURDAY2 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -206,16 +206,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getSaturday2Notice(String name){
+    public String getSaturday2Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SAT2NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SAT2NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -229,16 +229,16 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public String[] getSunday1(String name){
+    public String[] getSunday1(String name) {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SUNDAY1+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SUNDAY1 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -253,16 +253,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getSunday1Notice(String name){
+    public String getSunday1Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SUN1NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SUN1NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -276,16 +276,16 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public String[] getSunday2(String name){
+    public String[] getSunday2(String name) {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] buffer = {};
         String values;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SUNDAY2+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SUNDAY2 + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -300,16 +300,16 @@ public class DatabaseAdapter {
         return buffer;
     }
 
-    public String getSunday2Notice(String name){
+    public String getSunday2Notice(String name) {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         String value = null;
 
-        String sqlQuery = "SELECT "+DatabaseHelper.SUN2NOTICE+" FROM "+DatabaseHelper.TABLE_NAME+" WHERE "+DatabaseHelper.BUSNAME+"=\""+name+"\";";
+        String sqlQuery = "SELECT " + DatabaseHelper.SUN2NOTICE + " FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.BUSNAME + "=\"" + name + "\";";
 
-        Cursor cursor = db.rawQuery(sqlQuery,null);
+        Cursor cursor = db.rawQuery(sqlQuery, null);
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             if (((cursor.getString(0)).compareTo("null")) == 0) {
                 cursor.close();
                 db.close();
@@ -323,18 +323,17 @@ public class DatabaseAdapter {
         return value;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         SQLiteDatabase db = helper.getReadableDatabase();
         String query = ("SELECT count(*) FROM " + DatabaseHelper.TABLE_NAME);
         Cursor cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         int count = cursor.getInt(0);
-        if (count > 0){
+        if (count > 0) {
             cursor.close();
             db.close();
             return false;
-        }
-        else{
+        } else {
             cursor.close();
             db.close();
             return true;
@@ -342,7 +341,8 @@ public class DatabaseAdapter {
         }
     }
 
-    public static class DatabaseHelper extends SQLiteOpenHelper{
+    //Initialize table
+    public static class DatabaseHelper extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "timetable_local.db";
         private static final String TABLE_NAME = "timetable";
         private static final String BUSNAME = "busname";
@@ -361,7 +361,7 @@ public class DatabaseAdapter {
         private Context context;
         private static final int DATABASE_VERSION = 1;
         private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME
-                +"("+BUSNAME+" TEXT PRIMARY KEY, "+WORKDAY1+" TEXT, "+WD1NOTICE+" TEXT, "+WORKDAY2+" TEXT, "+WD2NOTICE+" TEXT, "+SATURDAY1+" TEXT, "+SAT1NOTICE+" TEXT, "+SATURDAY2+" TEXT, "+SAT2NOTICE+" TEXT,"+SUNDAY1+" TEXT, "+SUN1NOTICE+" TEXT, "+SUNDAY2+" TEXT, "+SUN2NOTICE+" TEXT);";
+                + "(" + BUSNAME + " TEXT PRIMARY KEY, " + WORKDAY1 + " TEXT, " + WD1NOTICE + " TEXT, " + WORKDAY2 + " TEXT, " + WD2NOTICE + " TEXT, " + SATURDAY1 + " TEXT, " + SAT1NOTICE + " TEXT, " + SATURDAY2 + " TEXT, " + SAT2NOTICE + " TEXT," + SUNDAY1 + " TEXT, " + SUN1NOTICE + " TEXT, " + SUNDAY2 + " TEXT, " + SUN2NOTICE + " TEXT);";
         private static final String DROP_TABLE = "DROP TABLE " + TABLE_NAME + " IF EXISTS";
 
         public DatabaseHelper(Context context) {
@@ -371,9 +371,9 @@ public class DatabaseAdapter {
 
         @Override
         public void onCreate(SQLiteDatabase database) {
-            try{
+            try {
                 database.execSQL(CREATE_TABLE);
-            }catch(SQLException e){
+            } catch (SQLException e) {
                 Toast.makeText(context, "Error creating database.",
                         Toast.LENGTH_LONG).show();
             }
@@ -382,10 +382,10 @@ public class DatabaseAdapter {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            try{
+            try {
                 db.execSQL(DROP_TABLE);
                 onCreate(db);
-            }catch(SQLException e){
+            } catch (SQLException e) {
                 Toast.makeText(context, "Error updating database.",
                         Toast.LENGTH_LONG).show();
             }

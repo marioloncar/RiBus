@@ -13,7 +13,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
-    public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
+    public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
         this.Titles = mTitles;
@@ -22,25 +22,22 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     //This method return the fragment for the every position in the View Pager
     @Override
-    public Fragment getItem(int position)
-    {
+    public Fragment getItem(int position) {
 
         if (position == 0) // if the position is 0 we are returning the First tab
         {
             FragmentWorkday workday = new FragmentWorkday();
             return workday;
         }
-        if (position == 1)
-        {
+        if (position == 1) {
             FragmentSaturday saturday = new FragmentSaturday();
             return saturday;
         }
-        if (position == 2)
-        {
+        if (position == 2) {
             FragmentSundayH sunday = new FragmentSundayH();
             return sunday;
         }
-            return null;
+        return null;
     }
 
     // This method return the titles for the Tabs in the Tab Strip

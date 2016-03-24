@@ -34,7 +34,8 @@ public class FragmentSaturday extends Fragment {
     ListView timetable;
     TextView noBus, message;
 
-    public FragmentSaturday(){}
+    public FragmentSaturday() {
+    }
 
     @Nullable
     @Override
@@ -90,7 +91,7 @@ public class FragmentSaturday extends Fragment {
 
         if (data != null) {
 
-        try {
+            try {
                 //remove whitespace from array
                 for (int i = 0; i < data.length; i++)
                     data[i] = data[i].trim();
@@ -110,11 +111,10 @@ public class FragmentSaturday extends Fragment {
                         adapter, R.layout.listview_section, R.id.list_item_section_text, sectionizer);
 
                 timetable.setAdapter(sectionAdapter);
-            }catch(SQLException e){
+            } catch (SQLException e) {
                 Log.e("Error", "Cannot display data");
             }
-        }
-        else{
+        } else {
             noBus.setText("This bus does not drive on selected day");
         }
     }
@@ -126,7 +126,7 @@ public class FragmentSaturday extends Fragment {
 
         message.setText(helper.getSaturday2Notice(num));
 
-        if(data != null) {
+        if (data != null) {
 
             try {
                 //remove whitespace from array
@@ -151,11 +151,10 @@ public class FragmentSaturday extends Fragment {
             } catch (SQLException e) {
                 Log.e("Error", "Cannot display data");
             }
-        }
-        else{
+        } else {
             noBus.setText("This bus does not drive on selected day");
         }
     }
-    }
+}
 
 

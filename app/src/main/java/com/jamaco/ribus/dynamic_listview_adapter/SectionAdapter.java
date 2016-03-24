@@ -30,13 +30,13 @@ public class SectionAdapter<T> extends BaseAdapter {
     public SectionAdapter(Context context, BaseAdapter listAdapter,
                           int sectionHeaderLayoutId, int sectionTitleTextViewId,
                           Section<T> sectionizer) {
-        if(context == null) {
+        if (context == null) {
             throw new IllegalArgumentException("context cannot be null.");
-        } else if(listAdapter == null) {
+        } else if (listAdapter == null) {
             throw new IllegalArgumentException("listAdapter cannot be null.");
-        } else if(sectionizer == null) {
+        } else if (sectionizer == null) {
             throw new IllegalArgumentException("sectionizer cannot be null.");
-        } else if(!isTextView(context, sectionHeaderLayoutId, sectionTitleTextViewId)) {
+        } else if (!isTextView(context, sectionHeaderLayoutId, sectionTitleTextViewId)) {
             throw new IllegalArgumentException("sectionTitleTextViewId should be a TextView.");
         }
 
@@ -69,26 +69,26 @@ public class SectionAdapter<T> extends BaseAdapter {
         SectionHolder sectionHolder = null;
 
         switch (getItemViewType(position)) {
-        case VIEW_TYPE_SECTION_HEADER:
-            if(view == null) {
-                view = View.inflate(mContext, mSectionHeaderLayoutId, null);
+            case VIEW_TYPE_SECTION_HEADER:
+                if (view == null) {
+                    view = View.inflate(mContext, mSectionHeaderLayoutId, null);
 
-                sectionHolder = new SectionHolder();
-                sectionHolder.titleTextView = (TextView) view.findViewById(mSectionTitleTextViewId);
+                    sectionHolder = new SectionHolder();
+                    sectionHolder.titleTextView = (TextView) view.findViewById(mSectionTitleTextViewId);
 
-                view.setTag(sectionHolder);
-            } else {
-                sectionHolder = (SectionHolder) view.getTag();
-            }
-            break;
+                    view.setTag(sectionHolder);
+                } else {
+                    sectionHolder = (SectionHolder) view.getTag();
+                }
+                break;
 
-        default:
-            view = mListAdapter.getView(getIndexForPosition(position), 
-                    convertView, parent);
-            break;
+            default:
+                view = mListAdapter.getView(getIndexForPosition(position),
+                        convertView, parent);
+                break;
         }
 
-        if(sectionHolder != null) {
+        if (sectionHolder != null) {
             String sectionName = sectionTitleForPosition(position);
             sectionHolder.titleTextView.setText(sectionName);
         }
@@ -104,9 +104,9 @@ public class SectionAdapter<T> extends BaseAdapter {
     @Override
     public int getItemViewType(int position) {
         int positionInCustomAdapter = getIndexForPosition(position);
-        return mSections.values().contains(position) ? 
-                VIEW_TYPE_SECTION_HEADER : 
-                    mListAdapter.getItemViewType(positionInCustomAdapter) + 1;
+        return mSections.values().contains(position) ?
+                VIEW_TYPE_SECTION_HEADER :
+                mListAdapter.getItemViewType(positionInCustomAdapter) + 1;
     }
 
     @Override
@@ -140,8 +140,8 @@ public class SectionAdapter<T> extends BaseAdapter {
         int nSections = 0;
 
         Set<Entry<String, Integer>> entrySet = mSections.entrySet();
-        for(Entry<String, Integer> entry : entrySet) {
-            if(entry.getValue() < position) {
+        for (Entry<String, Integer> entry : entrySet) {
+            if (entry.getValue() < position) {
                 nSections++;
             }
         }
@@ -159,16 +159,16 @@ public class SectionAdapter<T> extends BaseAdapter {
         mSections.clear();
 
 
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             String sectionName = mSectionizer.getSectionTitleForItem((T) mListAdapter.getItem(i));
 
-            if(!mSections.containsKey(sectionName)) {
+            if (!mSections.containsKey(sectionName)) {
                 mSections.put(sectionName, i + nSections);
-                nSections ++;
+                nSections++;
             }
         }
 
-        if(DEBUG) {
+        if (DEBUG) {
             Log.d(TAG, String.format("Found %d sections.", mSections.size()));
         }
     }
@@ -181,8 +181,8 @@ public class SectionAdapter<T> extends BaseAdapter {
         String title = null;
 
         Set<Entry<String, Integer>> entrySet = mSections.entrySet();
-        for(Entry<String, Integer> entry : entrySet) {
-            if(entry.getValue() == position) {
+        for (Entry<String, Integer> entry : entrySet) {
+            if (entry.getValue() == position) {
                 title = entry.getKey();
                 break;
             }

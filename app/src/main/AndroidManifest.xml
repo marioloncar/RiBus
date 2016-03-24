@@ -13,15 +13,11 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <permission
         android:name="com.jamaco.ribus.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
     <uses-permission android:name="com.jamaco.ribus.permission.C2D_MESSAGE" />
-
-    <!--
- The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but are recommended.
-    -->
 
 
     <application
@@ -88,16 +84,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Settings"
-            android:label="Info"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="com.jamaco.ribus.SETTINGS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <meta-data
             android:name="io.fabric.ApiKey"
@@ -120,6 +106,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
                 <category android:name="com.jamaco.ribus" />
             </intent-filter>
         </receiver>

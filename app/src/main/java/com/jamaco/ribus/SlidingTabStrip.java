@@ -3,6 +3,7 @@ package com.jamaco.ribus;
 /**
  * Created by mario on 16.07.15..
  */
+
 import android.R;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -46,7 +47,7 @@ class SlidingTabStrip extends LinearLayout {
 
         TypedValue outValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.colorForeground, outValue, true);
-        final int themeForegroundColor =  outValue.data;
+        final int themeForegroundColor = outValue.data;
 
         mDefaultBottomBorderColor = setColorAlpha(themeForegroundColor,
                 DEFAULT_BOTTOM_BORDER_COLOR_ALPHA);
@@ -145,7 +146,7 @@ class SlidingTabStrip extends LinearLayout {
 
         @Override
         public final int getIndicatorColor(int position) {
-            return mIndicatorColors[position % mIndicatorColors.    length];
+            return mIndicatorColors[position % mIndicatorColors.length];
         }
 
         void setIndicatorColors(int... colors) {

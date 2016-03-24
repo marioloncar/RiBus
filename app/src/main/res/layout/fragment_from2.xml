@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/custom_white"
     tools:context=".FragmentFrom2">
 
     <TextView
+        android:id="@+id/tvBusnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Line number"
-        android:id="@+id/tvBusnumber"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:paddingTop="8dp"
+        android:text="Line number"
         android:textColor="@color/custom_blue"
-        android:textSize="28sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="28sp" />
 
     <NumberPicker
+        android:id="@+id/numberPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:solidColor="@color/custom_white"
-        android:textColor="@color/custom_blue"
-        android:layout_marginBottom="0dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:solidColor="@color/custom_white"
+        android:textColor="@color/custom_blue" />
 
     <TextView
+        android:id="@+id/tvDeparture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvDeparture"
-        android:gravity="center"
-        android:lineSpacingExtra="5sp"
-        android:textColor="@color/custom_blue"
-        android:textSize="18sp"
         android:layout_below="@+id/tvBusnumber"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="57dp"
-        android:editable="false" />
+        android:editable="false"
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:textColor="@color/custom_blue"
+        android:textSize="18sp" />
 </RelativeLayout>

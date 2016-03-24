@@ -1,7 +1,7 @@
 package com.jamaco.ribus.sectioned_listview;
 
 public interface Item {
-	
-	public boolean isSection();
+
+    public boolean isSection();
 
 }

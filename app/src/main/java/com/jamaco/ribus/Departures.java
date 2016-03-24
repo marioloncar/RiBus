@@ -66,15 +66,8 @@ public class Departures extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

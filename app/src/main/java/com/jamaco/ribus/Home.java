@@ -91,29 +91,8 @@ public class Home extends AppCompatActivity {
         return str;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuInflater meni = getMenuInflater();
-        meni.inflate(R.menu.settings, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Pass the event to ActionBarDrawerToggle, if it returns
-        // true, then it has handled the app icon touch event
-
-        switch (item.getItemId()) {
-            case R.id.info:
-                Intent openSettings = new Intent("com.jamaco.ribus.SETTINGS");
-                startActivity(openSettings);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void showConnectionDialog () {
+    public void showConnectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setTitle("No internet connection");
@@ -136,14 +115,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
-                }
+            }
         });
-            AlertDialog dialog = builder.create();
-            dialog.show();
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
     }
 
-    private boolean isNetworkAvailable () {
+    private boolean isNetworkAvailable() {
         // Using ConnectivityManager to check for Network Connection
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -157,11 +136,10 @@ public class Home extends AppCompatActivity {
 
         helper = new DatabaseAdapter(this);
 
-        if (helper.isEmpty()){
-            if(!isNetworkAvailable()){
+        if (helper.isEmpty()) {
+            if (!isNetworkAvailable()) {
                 showConnectionDialog();
-            }
-            else{
+            } else {
                 //first download
                 progress = new ProgressDialog(Home.this);
                 progress.setIndeterminate(true);
@@ -188,15 +166,14 @@ public class Home extends AppCompatActivity {
                                 sun1notice = post.getString("sun1notice");
                                 sun2notice = post.getString("sun2notice");
 
-                                helper.insertData(busname,workday1,wd1notice,workday2,wd2notice,saturday1,sat1notice,saturday2,sat2notice,sunday1,sun1notice,sunday2,sun2notice);
+                                helper.insertData(busname, workday1, wd1notice, workday2, wd2notice, saturday1, sat1notice, saturday2, sat2notice, sunday1, sun1notice, sunday2, sun2notice);
                             }
                         }
                         progress.dismiss();
                     }
                 });
             }
-        }
-        else {
+        } else {
             //update database
             ParseQuery<ParseObject> query = ParseQuery.getQuery("RiBusTimetable");
             query.findInBackground(new FindCallback<ParseObject>() {
@@ -218,7 +195,7 @@ public class Home extends AppCompatActivity {
                             sun1notice = post.getString("sun1notice");
                             sun2notice = post.getString("sun2notice");
 
-                            helper.updateData(busname,workday1,wd1notice,workday2,wd2notice,saturday1,sat1notice,saturday2,sat2notice,sunday1,sun1notice,sunday2,sun2notice);
+                            helper.updateData(busname, workday1, wd1notice, workday2, wd2notice, saturday1, sat1notice, saturday2, sat2notice, sunday1, sun1notice, sunday2, sun2notice);
                         }
                     }
                 }
