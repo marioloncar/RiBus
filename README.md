@@ -1,5 +1,16 @@
 # RiBus
 
+<b>Android developer: </br>Mario Lončar
+<br>
+<b>iOS developer:</b> Jasmin Abou Aldan
+<br>
+
+## Motivation
+
+App was made as part of MIPRO - International convention on information and communication technology, electronics and microelectronics, Opatija (section: Digital Economy and Government/Local Government/Public Services)
+
+## Synopsis 
+
 RiBus is beautifully designed app that gives you all info about local bus lines in Rijeka.
  
 It provides timetable for city bus lines, locations of bus stations and estimated departing time of the next bus for the selected line. It also helps you not to wander looking for bus stop by providing shortest route from your location to certain bus stop.
