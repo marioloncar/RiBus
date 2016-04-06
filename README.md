@@ -8,6 +8,10 @@ Idea for this app came out of sheer need. Students, tourists and citizens often 
 
 Application uses, for its calculation, official timetables in which a bus should be on station. Currently, it does not show if the bus came earlier on a station or is it late.
 
-##Version 1.1
-- feature 1
-- feature 2
+## Screenshots
+
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" width="190" height="320">
+<img src="https://github.com/marioloncar/Pharmacy/blob/master/screenshots/maps.png" width="190" height="320">
+<img src="https://github.com/marioloncar/Pharmacy/blob/master/screenshots/stations.png" width="190" height="320">
+<img src="https://github.com/marioloncar/Pharmacy/blob/master/screenshots/time_calculation.png" width="190" height="320">
+<img src="https://github.com/marioloncar/Pharmacy/blob/master/screenshots/timetable.png" width="190" height="320">
