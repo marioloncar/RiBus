@@ -10,8 +10,8 @@ Application uses, for its calculation, official timetables in which a bus should
 
 ## Screenshots
 
-<p align="center"><img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" width="420" height="250"></p>
-<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/maps.png" width="230" height="360">
-<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/stations.png" width="230" height="360">
-<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/time_calculation.png" width="230" height="360">
-<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/timetable.png" width="230" height="360">
+<p align="center"><img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" width="520" height="350"></p>
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/maps.png" width="220" height="350">
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/stations.png" width="220" height="350">
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/time_calculation.png" width="220" height="350">
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/timetable.png" width="220" height="350">
