@@ -1,4 +1,4 @@
-# RiBus-Android
+# RiBus
 
 RiBus is beautifully designed app that gives you all info about local bus lines in Rijeka.
  
