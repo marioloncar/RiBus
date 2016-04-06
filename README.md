@@ -1,6 +1,6 @@
 # RiBus
 
-<b>Android developer: </br>Mario Lončar
+<b>Android developer: </b>Mario Lončar
 <br>
 <b>iOS developer:</b> Jasmin Abou Aldan
 <br>
