@@ -10,7 +10,7 @@ Application uses, for its calculation, official timetables in which a bus should
 
 ## Screenshots
 
-<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" align="center" width="650" height="480">
+<img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" align="middle" width="650" height="480">
 <img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/maps.png" width="190" height="320">
 <img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/stations.png" width="190" height="320">
 <img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/time_calculation.png" width="190" height="320">
