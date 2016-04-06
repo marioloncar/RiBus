@@ -2,7 +2,7 @@
 
 <b>Android developer: </b>Mario Lončar
 <br>
-<b>iOS developer:</b> Jasmin Abou Aldan
+<b>iOS developer:</b> Jasmin Abou Aldan (github.com/jabou/RiBus-iOS)
 <br>
 
 ## Motivation
