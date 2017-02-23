@@ -19,8 +19,6 @@ Idea for this app came out of sheer need. Students, tourists and citizens often 
 
 Application uses, for its calculation, official timetables in which a bus should be on station. Currently, it does not show if the bus came earlier on a station or is it late.
 
-IMPORTANT: app is discontinued.
-
 ## Screenshots
 
 <p align="center"><img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/home.png" width="520" height="310"></p>
@@ -30,3 +28,7 @@ IMPORTANT: app is discontinued.
 <img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/time_calculation.png" width="200" height="330">
 <img src="https://github.com/marioloncar/RiBus-Android/blob/master/screenshots/timetable.png" width="200" height="330">
 </p>
+
+## Important
+
+App is discontinued.
